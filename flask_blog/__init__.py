@@ -18,4 +18,9 @@ app.config['MAIL_USERNAME'] = 'xda2.aditya@gmail.com'
 app.config['MAIL_PASSWORD'] = 'adi@1996'
 mail = Mail(app)
 
-from flask_blog import routes
+from flask_blog.Users.routes import users
+from flask_blog.Posts.routes import posts
+from flask_blog.main.routes import main
+app.register_blueprint(users)
+app.register_blueprint(posts)
+app.register_blueprint(main)
